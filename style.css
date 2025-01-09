@@ -248,4 +248,15 @@
             box-shadow: rgba(17, 12, 46, 0.15) 0px 48px 100px 0px;
         }
 
+        @media (max-width: 768px) {
+            #home {
+                min-height: 100vh;
+                display: flex;
+                align-items: center;
+            }
         
+            #home .container {
+                margin-top: auto;
+                margin-bottom: auto;
+            }
+        }

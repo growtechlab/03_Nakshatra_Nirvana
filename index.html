@@ -85,25 +85,35 @@
     <section id="home" class="relative min-h-screen flex items-center">
         <!-- Background Image with Responsive Settings -->
         <div class="absolute inset-0 z-0">
+            <!-- Mobile Background Image -->
+            <img 
+                src="/img/banner.png" 
+                alt="Luxury Property Mobile" 
+                class="w-full h-full object-cover md:hidden"
+            >
+            
+            <!-- Desktop Background Image -->
             <img 
                 src="/img/homebanner1.jpeg" 
-                alt="Luxury Property" 
-                class="w-full h-full object-cover md:object-right-top lg:object-center"
+                alt="Luxury Property Desktop" 
+                class="hidden md:block w-full h-full object-cover md:object-right-top lg:object-center"
+                style="object-position: center 20%;" 
             >
-            <div class="absolute inset-0 bg-gradient-to-r from-transparent to-black/50"></div>
-            <!-- <div class="absolute inset-0 bg-gradient-to-t md:bg-gradient-to-r from-black/60 via-black/40 to-transparent"></div> -->
+            
+            <!-- Optional: Add overlay for better text readability -->
+            <div class="absolute inset-0 bg-black/30 md:bg-transparent md:bg-gradient-to-r md:from-black/40 md:to-transparent"></div>
         </div>
     
         <!-- Content Container -->
         <div class="relative z-10 w-full">
             <div class="container mx-auto px-4">
                 <!-- Mobile Layout (Centered) -->
-                <div class="md:hidden text-center px-4 pt-20">
-                    <h1 class="text-4xl text-white font-bold mb-4 animate-fade-in-up">
+                <div class="md:hidden text-center px-4 pt-64">
+                    <h1 class="text-6xl text-white font-bold mb-4 animate-fade-in-up">
                         Nakshatra<br/>
                         Nirvana
                     </h1>
-                    <p class="text-gray-200 text-lg mb-6">
+                    <p class="text-gray-200 text-2xl mb-6">
                         Experience luxury living in Naigaon East with our<br/> premium 1 & 2 BHK residences
                     </p>
                     
@@ -1472,83 +1482,87 @@
                 <p class="text-gray-600">Get in touch with us for site visits and inquiries</p>
             </div>
     
+            <!-- Contact Section Cards -->
             <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
-                <!-- Contact Info -->
-
-                
-                <div class="bg-white relative rounded-xl shadow-lg flex flex-col justify-between h-full">
-
-
-                        
-
-                    <div class="relative overflow-hidden">
-                        <!-- Animated Offer Label -->
-
-                        <div class="absolute -right-12 top-6 bg-red-500 text-white py-1 px-12 transform rotate-45 shadow-lg animate-pulse-offer">
-                            <span class="text-sm font-bold">SPECIAL OFFER</span>
-                        </div>
-                        
-                        
-                        <div class="flex  p-6 items-start mb-4">
-                            <div class="w-12 h-12 bg-gradient-to-br from-blue-100 to-blue-50 rounded-full flex items-center justify-center mr-4 shadow-sm">
-                                <svg class="w-6 h-6 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6"/>
-                                </svg>
-                            </div>
-                            <div>
-                                <h3 class="text-xl font-semibold mb-2">Free Site Visit</h3>
-                                <p class="text-gray-600 mb-3">Experience your future home firsthand with our complimentary site visit service.</p>
-                                <ul class="space-y-2 text-gray-600">
-                                    <li class="flex items-center">
-                                        <svg class="w-4 h-4 text-green-500 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
-                                        </svg>
-                                        Personalized tour of the property
-                                    </li>
-                                    <li class="flex items-center">
-                                        <svg class="w-4 h-4 text-green-500 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
-                                        </svg>
-                                        Expert guidance available
-                                    </li>
-                                    <li class="flex items-center">
-                                        <svg class="w-4 h-4 text-green-500 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
-                                        </svg>
-                                        Flexible scheduling
-                                    </li>
-                                </ul>
-                            </div>
-                        </div>
-
-                        
+                <!-- Free Site Visit Card -->
+                <div class="bg-white rounded-xl shadow-lg overflow-hidden lg:flex">
+                    <!-- Image Section -->
+                    <div class="lg:w-2/5 relative">
+                        <img 
+                            src="/img/car.png" 
+                            alt="Site Visit" 
+                            class="w-full h-full object-cover"
+                        >
+                        <!-- Optional gradient overlay -->
+                        <div class="absolute inset-0 bg-gradient-to-r from-black/20 to-transparent"></div>
                     </div>
 
-                    <button class="bg-blue-600 m-6 hover:bg-blue-700 text-white py-2 px-6 rounded-lg transition-all duration-300 transform hover:-translate-y-1 hover:shadow-lg mt-auto">
-                        Schedule Your Site Visit
-                    </button>
-                    
+                    <!-- Content Section -->
+                    <div class="lg:w-3/5 p-6 flex flex-col justify-between bg-gradient-to-br from-gray-50 to-white">
+                        <div>
+                            <h3 class="text-2xl font-bold mb-4">Free Site Visit</h3>
+                            <p class="text-gray-700 mb-4">Experience your future home firsthand with our complimentary site visit service.</p>
+                            <ul class="space-y-2 text-gray-700">
+                                <li class="flex items-center">
+                                    <svg class="w-4 h-4 text-green-600 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
+                                    </svg>
+                                    Personalized tour of the property
+                                </li>
+                                <li class="flex items-center">
+                                    <svg class="w-4 h-4 text-green-600 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
+                                    </svg>
+                                    Expert guidance available
+                                </li>
+                                <li class="flex items-center">
+                                    <svg class="w-4 h-4 text-green-600 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
+                                    </svg>
+                                    Flexible scheduling
+                                </li>
+                            </ul>
+                        </div>
+                        <button class="mt-6 bg-blue-600 hover:bg-blue-700 text-white py-2 px-6 rounded-lg transition-all duration-300 transform hover:-translate-y-1 hover:shadow-lg">
+                            Schedule Your Site Visit
+                        </button>
+                    </div>
                 </div>
 
-    
-                <!-- Contact Form -->
-                <div class="bg-white p-6 rounded-xl shadow-lg flex flex-col justify-between h-full text-center">
-
-
-                    <h3 class="text-2xl font-bold mb-4 text-blue-600">Special Loan Offer</h3>
-                    <p class="text-lg text-gray-700 mb-6">Avail exclusive home loan offers with low-interest rates. Limited time only!</p>
-                    <div class="text-gray-900 text-lg font-semibold mb-4">
-                        <p>Contact Us: <a href="tel:+919309910487" class="text-blue-600 hover:underline">+91 9309910487</a></p>
+                <!-- Special Loan Offer Card -->
+                <div class="bg-white rounded-xl shadow-lg overflow-hidden lg:flex">
+                    <!-- Image Section -->
+                    <div class="lg:w-2/5 relative">
+                        <img 
+                            src="/img/loan.png" 
+                            alt="Loan Offer" 
+                            class="w-full h-full object-cover"
+                        >
+                        <!-- Optional gradient overlay -->
+                        <div class="absolute inset-0 bg-gradient-to-r from-black/20 to-transparent"></div>
                     </div>
-                    <button 
-                        onclick="location.href='tel:+919309910487'" 
-                        class="bg-blue-600 hover:bg-blue-700 text-white py-2 px-6 rounded-lg transition-all duration-300 transform hover:-translate-y-1 hover:shadow-lg mt-auto"
-                    >
-                        Call Now
-                    </button>
+
+                    <!-- Content Section -->
+                    <div class="lg:w-3/5 p-6 flex flex-col justify-between bg-gradient-to-br from-gray-50 to-white">
+                        <div>
+                            <h3 class="text-2xl font-bold mb-4 text-blue-600">Special Loan Offer</h3>
+                            <p class="text-lg text-gray-700 mb-6">
+                                Avail exclusive home loan offers with low-interest rates. Limited time only!
+                            </p>
+                            <div class="text-gray-900 text-lg font-semibold">
+                                <p>Contact Us: <a href="tel:+919309910487" class="text-blue-600 hover:underline">+91 9309910487</a></p>
+                            </div>
+                        </div>
+                        <button 
+                            onclick="location.href='tel:+919136588517'" 
+                            class="mt-6 bg-blue-600 hover:bg-blue-700 text-white py-2 px-6 rounded-lg transition-all duration-300 transform hover:-translate-y-1 hover:shadow-lg"
+                        >
+                            Call Now
+                        </button>
                     </div>
                 </div>
             </div>
+        </div>
         </div>
     </section>
     

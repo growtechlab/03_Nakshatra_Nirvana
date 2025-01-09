@@ -1823,87 +1823,126 @@
 
     <script>
 
-        
-document.addEventListener('DOMContentLoaded', function() {
-    // Get all buttons that should trigger the popup
-    const buttons = document.querySelectorAll('button');
-    
-    buttons.forEach(button => {
-        const buttonText = button.textContent.toLowerCase();
-        if (buttonText.includes('get details') || 
-            buttonText.includes('enquire') || 
-            buttonText.includes('download brochure') ||
-            buttonText.includes('schedule a visit') ||
-            buttonText.includes('call now') ||
-            buttonText.includes('schedule your site visit') ||
-            buttonText.includes('break pricing') ||
-            buttonText.includes('contact')) {
-            
-            // Randomly assign different animation classes
-            const animations = [
-                'animate-pulse-custom',
-                'animate-bounce-custom',
-                'animate-shake',
-                'animate-scale',
-                'animate-glow',
-                'btn-animated'
-            ];
-            
-            // Add base classes for all buttons
-            button.classList.add('transition-all', 'duration-300');
-            
-            // Add specific animation class
-            // You can either randomly assign animations:
-            
-            
-            // Or assign specific animations based on button type:
-            if (buttonText.includes('enquire')) {
-                button.classList.add('animate-pulse-custom');
-            } else if (buttonText.includes('download')) {
-                button.classList.add('animate-pulse-custom');
-            } else if (buttonText.includes('schedule')) {
-                button.classList.add('animate-pulse-custom');
-            } else {
-                button.classList.add('animate-pulse-custom');
+    // console.log("Hello World!!");
+
+    document.addEventListener('DOMContentLoaded', function() {
+        // Get all buttons that should trigger the popup
+        const buttons = document.querySelectorAll('button');
+
+        // console.log("Hello world");
+
+        try {
+        // 
+        buttons.forEach(button => {
+            const buttonText = button.textContent.toLowerCase();
+            if (buttonText.includes('get details') || 
+                buttonText.includes('enquire') || 
+                buttonText.includes('download brochure') ||
+                buttonText.includes('schedule a visit') ||
+                buttonText.includes('schedule your site visit') ||
+                buttonText.includes('break pricing') ||
+                buttonText.includes('contact')) {
+                button.addEventListener('click', openEnquiryPopup);
             }
-            
-            // Add hover effect for all buttons
-            button.addEventListener('mouseenter', () => {
-                button.style.transform = 'translateY(-2px)';
+        });
+
+        const popup = document.getElementById('enquiryPopup');
+        if (popup) {
+            popup.addEventListener('click', function(e) {
+                if (e.target === this) {
+                    closeEnquiryPopup();
+                }
             });
-            
-            button.addEventListener('mouseleave', () => {
-                button.style.transform = 'translateY(0)';
-            });
+        } else {
+            console.warn("Popup element not found!");
         }
-    });
-});
+        document.addEventListener('keydown', function(e) {
+            if (e.key === 'Escape') {
+                closeEnquiryPopup();
+            }
+        });
+    } catch (error) {
+        console.error("An error occurred:", error);
+    }
 
 
-function reveal() {
-    const reveals = document.querySelectorAll('.reveal');
-    
-    reveals.forEach(element => {
-        const windowHeight = window.innerHeight;
-        const elementTop = element.getBoundingClientRect().top;
-        const elementVisible = 150;
         
-        if (elementTop < windowHeight - elementVisible) {
-            element.classList.add('active');
-        }
+        buttons.forEach(button => {
+            const buttonText = button.textContent.toLowerCase();
+            if (buttonText.includes('get details') || 
+                buttonText.includes('enquire') || 
+                buttonText.includes('download brochure') ||
+                buttonText.includes('schedule a visit') ||
+                buttonText.includes('call now') ||
+                buttonText.includes('schedule your site visit') ||
+                buttonText.includes('break pricing') ||
+                buttonText.includes('contact')) {
+                
+                // Randomly assign different animation classes
+                const animations = [
+                    'animate-pulse-custom',
+                    'animate-bounce-custom',
+                    'animate-shake',
+                    'animate-scale',
+                    'animate-glow',
+                    'btn-animated'
+                ];
+                
+                // Add base classes for all buttons
+                button.classList.add('transition-all', 'duration-300');
+                
+                // Add specific animation class
+                // You can either randomly assign animations:
+                
+                // Or assign specific animations based on button type:
+                if (buttonText.includes('enquire')) {
+                    button.classList.add('animate-pulse-custom');
+                } else if (buttonText.includes('download')) {
+                    button.classList.add('animate-pulse-custom');
+                } else if (buttonText.includes('schedule')) {
+                    button.classList.add('animate-pulse-custom');
+                } else {
+                    button.classList.add('animate-pulse-custom');
+                }
+                
+                // Add hover effect for all buttons
+                button.addEventListener('mouseenter', () => {
+                    button.style.transform = 'translateY(-2px)';
+                });
+                
+                button.addEventListener('mouseleave', () => {
+                    button.style.transform = 'translateY(0)';
+                });
+            }
+        });
     });
-}
-
-window.addEventListener('scroll', reveal);
-reveal(); // Initial check
 
 
-const mobileMenuButton = document.getElementById('mobile-menu-button');
+    function reveal() {
+        const reveals = document.querySelectorAll('.reveal');
+        
+        reveals.forEach(element => {
+            const windowHeight = window.innerHeight;
+            const elementTop = element.getBoundingClientRect().top;
+            const elementVisible = 150;
+            
+            if (elementTop < windowHeight - elementVisible) {
+                element.classList.add('active');
+            }
+        });
+    }
+
+    window.addEventListener('scroll', reveal);
+    reveal(); // Initial check
+
+
+    const mobileMenuButton = document.getElementById('mobile-menu-button');
     const mobileMenu = document.getElementById('mobile-menu');
 
     mobileMenuButton.addEventListener('click', () => {
         mobileMenu.classList.toggle('hidden');
     });
+
     function toggleRows(targetId, button) {
         const hiddenRows = document.getElementById(targetId);
         const buttonText = button.querySelector('span');
@@ -1962,43 +2001,15 @@ const mobileMenuButton = document.getElementById('mobile-menu-button');
         // let url1 = "https://gt.thelearningsetu.com/api/page/pages?page=1&page_size=10"
         let res = await fetch(url);
         let data = await res.json();
+
+        document.getElementById('name').value = ""
+        document.getElementById('mobile').value = ""
+        document.getElementById('config').value = ""
         // console.log(data);
         // Add your form submission logic here
     }
 
-    // Add click event listeners to all "Get Details" buttons
-    document.addEventListener('DOMContentLoaded', function() {
-        // Get all buttons that should trigger the popup
-        const buttons = document.querySelectorAll('button');
-        
-        buttons.forEach(button => {
-            // Check if the button text contains specific keywords
-            const buttonText = button.textContent.toLowerCase();
-            if (buttonText.includes('get details') || 
-                buttonText.includes('enquire') || 
-                buttonText.includes('download brochure') ||
-                buttonText.includes('schedule a visit') ||
-                buttonText.includes('schedule your site visit') ||
-                buttonText.includes('break pricing') ||
-                buttonText.includes('contact')) {
-                button.addEventListener('click', openEnquiryPopup);
-            }
-        });
 
-        // Close popup when clicking outside
-        document.getElementById('enquiryPopup').addEventListener('click', function(e) {
-            if (e.target === this) {
-                closeEnquiryPopup();
-            }
-        });
-
-        // Close popup with Escape key
-        document.addEventListener('keydown', function(e) {
-            if (e.key === 'Escape') {
-                closeEnquiryPopup();
-            }
-        });
-    });
 
     document.querySelectorAll('button').forEach(button => {
         if (button.textContent.trim() === 'Enquire Now') {
